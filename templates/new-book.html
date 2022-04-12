@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Бланк
+{% endblock %}
+
+{% block body%}
+<div class="container mt-5">
+    <h1>Добаление книги</h1>
+    <form method="post">
+        <div class="form-group" style="margin: 30px 0 0 0 ; max-width: 1000px">
+            <label for="UDK">УДК</label>
+            <input type="number" name="UDK"
+                   placeholder="Номер УДК" class="form-control"
+                   value1="{{ request.form['UDK'] }}"></input>
+        </div>
+
+        <div class="form-group" style="margin: 30px 0 0 0 ; max-width: 1000px">
+            <label for="author">Автор</label>
+            <input type="text" name="author"
+                   placeholder="Имя автора" class="form-control"
+                   value2="{{ request.form['author'] }}"></input>
+        </div>
+
+        <div class="form-group" style="margin: 30px 0 0 0; max-width: 1000px">
+            <label for="title">Название</label>
+            <input type="text" name="title"
+                   placeholder="Название" class="form-control"
+                   value3="{{ request.form['title'] }}"></input>
+        </div>
+
+        <div class="form-group" style="margin: 30px 0 0 0 ; max-width: 1000px">
+            <label for="about">Описание</label>
+            <textarea name="about"  placeholder="Описание"
+                      class="form-control">{{ request.form['about'] }}</textarea>
+        </div>
+
+        <div class="form-group" style="margin: 30px 0 0 0; max-width: 1000px">
+            <label for="year">Год издания</label>
+            <input type="number" name="year"
+                   placeholder="Год издания" class="form-control"
+                   value4="{{ request.form['year'] }}"></input>
+        </div>
+
+        <div class="form-group" style="margin: 30px 0 0 0; max-width: 1000px">
+        <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

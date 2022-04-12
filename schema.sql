@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS library;
+
+CREATE TABLE if NOT EXISTS library (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    UDK INTEGER NOT NULL,
+    author TEXT NOT NULL,
+    title TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    about TEXT NOT NULL
+);
+
+
+

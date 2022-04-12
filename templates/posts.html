@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title%}
+Книги
+{% endblock %}
+{% block body%}
+
+<div class="container mt-5">
+    <h2><center>Книги в библиотеке</center></h2>
+<style>
+	/* Стили таблицы (IKSWEB) */
+	table.iksweb{text-decoration: none;border-collapse:collapse;width:100%;text-align:center;}
+	table.iksweb th{font-weight:normal;font-size:16px; color:#ffffff;background-color:#354251;}
+	table.iksweb td{font-size:14px;color:#354251;}
+	table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:13px 13px;line-height:13px;vertical-align: middle;border: 1px solid #354251;}	table.iksweb tr:hover{background-color:#ced9e0}
+	table.iksweb tr:hover td{color:#0095ff;cursor:default;}
+</style>
+<br>
+<table class="iksweb">
+<thead>
+<tr><th>UDK</th><th>Автор</th><th>Название</th><th>Год издания</th><th>Редактирование</th></tr>
+</thead>
+<tbody>
+    {% for el in library %}
+        <tr><td>{{ el['UDK'] }}</td><td>{{ el['author'] }}</td><td><a href="/posts/{{ el.id }}"> {{ el['title'] }}</a></td><td>{{ el['year'] }}</td>
+        <td><a href="/posts/{{ el.id }}/edit">Edit </a>
+        </td></tr>
+
+    {% endfor %}
+
+</tbody>
+</table>
+
+</div>
+{% endblock %}

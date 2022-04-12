@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Редактирование
+{% endblock %}
+{% block body%}
+<div class="container mt-5">
+    <h1>Редактирование книги "{{ library['title'] }}"</h1>
+    <form method="post">
+        <div class="form-group" style="margin: 30px 0 0 0; max-width: 1000px">
+            <label for="UDK">УДК</label>
+            <input type="number" name="UDK"
+                   placeholder="Номер УДК" class="form-control"
+                   value1="{{ request.form['UDK'] or library['UDK'] }}"></input>
+            <br>
+            <label for="author">Автор</label>
+            <input type="text" name="author"
+                   placeholder="Имя автора" class="form-control"
+                   value2="{{ request.form['author'] or library['author'] }}"></input>
+            <br>
+            <label for="title">Название</label>
+            <input type="text" name="title"
+                   placeholder="Название" class="form-control"
+                   value3="{{ request.form['title'] or library['title'] }}"></input>
+            <br>
+            <label for="about">Описание</label>
+            <textarea name="about"  placeholder="Описание"
+                      class="form-control">{{ request.form['about'] or library['about'] }}</textarea>
+            <br>
+            <label for="year">Год издания</label>
+            <input type="number" name="year"
+                   placeholder="Год издания" class="form-control"
+                   value4="{{ request.form['year'] or library['year']}}"></input>
+
+            <br>
+
+            <button type="submit" class="btn btn-primary">Изменить</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
